@@ -16,6 +16,7 @@ import {
   NavigationActions,
 } from 'react-navigation';
 import FingerprintScanner from 'react-native-fingerprint-scanner';
+import { connect } from 'react-redux';
 
 
 import { companies } from '../files/data';
@@ -26,6 +27,16 @@ import LinearGradient from 'react-native-linear-gradient';
 
 // Get screen Dimensions
 const { width, height } = Dimensions.get('window');
+
+@connect(
+  state => ({
+    userData: state.userData,
+    loading: state.loading,
+  }),
+  dispatch => ({
+    refresh: () => dispatch({type: 'GET_USER_DATA'}),
+  }),
+)
 
 
 export default class LogIn extends Component {
@@ -40,10 +51,13 @@ export default class LogIn extends Component {
   }
 
   pinCheck = (navRoute) => {
-    if (this.state.text === '1234') {
-      this.props.navigation.dispatch(navRoute);
+    for (i = 0; i < this.props.userData.length; i++) {
+      if (this.props.userData[i].PIN === this.state.text) {
+        this.props.navigation.dispatch(navRoute);
+        return;
+      }
     }
-    else alert('incorrect pin')
+    alert('incorrect pin')
   }
 
   FingerScanAttempt = (callback) => {

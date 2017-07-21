@@ -17,6 +17,7 @@ const store = createStore(reducer, {}, applyMiddleware(apiMiddleware));
 
 // Fetch movie data
 store.dispatch({type: 'GET_MOVIE_DATA'});
+store.dispatch({type: 'GET_USER_DATA'});
 
 const HallmarkAppFront = StackNavigator({
   LogIn: { screen: LogIn },

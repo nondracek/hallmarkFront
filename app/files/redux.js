@@ -1,8 +1,8 @@
 import { Platform } from 'react-native';
 
 const API = Platform.OS === 'android'
-  ? 'http://10.0.3.2:3000' // works for Genymotion
-  : 'http://localhost:3000';
+  ? 'http://10.0.3.2:5000' // works for Genymotion
+  : 'http://localhost:5000';
 
 export const apiMiddleware = store => next => action => {
   // Pass all actions through by default
@@ -34,14 +34,14 @@ export const apiMiddleware = store => next => action => {
       // Dispatch GET_MOVIE_DATA_LOADING to update loading state
       store.dispatch({type: 'GET_MOVIE_DATA_LOADING'});
       // Make API call and dispatch appropriate actions when done
-      fetch(`${API}/data`)
+      fetch(`${API}/pins`)
         .then(response => {
             return response.json()
           }
         )
         .then(data => {
           next({
-          type: 'GET_MOVIE_DATA_RECEIVED',
+          type: 'GET_USER_DATA_RECEIVED',
           data
         })})
         .catch(error => next({
@@ -56,7 +56,7 @@ export const apiMiddleware = store => next => action => {
   }
 };
 
-export const reducer = (state = { measureTypes: [], loading: true }, action) => {
+export const reducer = (state = { measureTypes: [], userData: [], loading: true }, action) => {
   switch (action.type) {
     case 'GET_MOVIE_DATA_LOADING':
       return {
@@ -65,11 +65,16 @@ export const reducer = (state = { measureTypes: [], loading: true }, action) => 
       };
     case 'GET_MOVIE_DATA_RECEIVED':
       return {
+        ...state,
         loading: false,             // set loading to false
         measureTypes: action.data.measureTypes, // update movies array with reponse data
       };
-    case 'GET_MOVIE_DATA_ERROR':
-      return state;
+    case 'GET_USER_DATA_RECEIVED':
+      return {
+        ...state,
+        loading: false,
+        userData: action.data.userData,
+      };
     default:
       return state;
     }
