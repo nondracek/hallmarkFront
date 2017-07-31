@@ -16,7 +16,7 @@ import { apiMiddleware, reducer } from './files/redux';
 const store = createStore(reducer, {}, applyMiddleware(apiMiddleware));
 
 // Fetch movie data
-store.dispatch({type: 'GET_MOVIE_DATA'});
+store.dispatch({type: 'GET_MEASURE_DATA'});
 store.dispatch({type: 'GET_USER_DATA'});
 
 const HallmarkAppFront = StackNavigator({
@@ -28,7 +28,7 @@ const HallmarkAppFront = StackNavigator({
     navigationOptions: {
       headerStyle: {
         height: 50,
-        backgroundColor: '#D2D2F5',
+        backgroundColor: '#CCCCCC',
       },
     }
   }

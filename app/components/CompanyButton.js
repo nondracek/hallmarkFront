@@ -51,7 +51,7 @@ export default class CompanyButton extends Component {
       <TouchableOpacity style={styles.container} onPress={() => onOpen(this.props.navigation, company)}>
         <View style={styles.imageContainer}>
           {/* <Image source={buttonImage} resizeMode= 'contain' style={styles.image}/> */}
-          <Image source={require('../files/images/blank-purple-button.png')} resizeMode= 'contain' style={styles.image}>
+          <Image source={require('../files/images/blank-gray-button.png')} resizeMode= 'contain' style={styles.image}>
             <Text style={[styles.buttonLabel, this.getStyles().buttonLabel]}>{abbreviation}</Text>
           </Image>
         </View>

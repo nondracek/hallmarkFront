@@ -19,7 +19,7 @@ import FingerprintScanner from 'react-native-fingerprint-scanner';
 import { connect } from 'react-redux';
 
 
-import { companies } from '../files/data';
+import { password } from '../files/data';
 import { defaultStyles } from '../components/style'
 import CompanyButton from '../components/CompanyButton'
 import Background from '../components/Background'
@@ -34,7 +34,7 @@ const { width, height } = Dimensions.get('window');
     loading: state.loading,
   }),
   dispatch => ({
-    refresh: () => dispatch({type: 'GET_USER_DATA'}),
+    refresh: () => dispatch({type: 'GET_MEASURE_DATA'}),
   }),
 )
 
@@ -51,17 +51,20 @@ export default class LogIn extends Component {
   }
 
   pinCheck = (navRoute) => {
-    for (i = 0; i < this.props.userData.length; i++) {
-      if (this.props.userData[i].PIN === this.state.text) {
-        this.props.navigation.dispatch(navRoute);
-        return;
-      }
+    // for (i = 0; i < this.props.userData.length; i++) {
+    //   if (this.props.userData[i].PIN === this.state.text) {
+    //     this.props.navigation.dispatch(navRoute);
+    //     return;
+    //   }
+    // }
+    if (this.state.text === password) {
+      this.props.navigation.dispatch(navRoute);
+      return;
     }
     alert('incorrect pin')
   }
 
   FingerScanAttempt = (callback) => {
-    if (Platform.OS === 'ios') {
       FingerprintScanner
         .isSensorAvailable()
         .then(result => {
@@ -77,18 +80,13 @@ export default class LogIn extends Component {
           })
           .catch((error) => {
             // this.props.handlePopupDismissed();
-            AlertIOS.alert("Could not read fingerprint");
+            alert("Could not read fingerprint");
           });
         })
         .catch((error) => {
-          AlertIOS.alert(error.message);
+          alert(error.message);
         })
-
     }
-    else if (Platform.OS === 'android') {
-
-    }
-  }
 
   render() {
     const { navigate } = this.props.navigation;
@@ -102,9 +100,13 @@ export default class LogIn extends Component {
 
     return (
       <LinearGradient
-        colors={['#4c669f', '#3b5998', '#192f6a']}
+        colors={['#CCCCCC', '#054C7A', '#192f6a']}
         style={styles.container}
         >
+          <Image
+            source={require('../files/images/hallmark-logo.png')}
+            resizeMode= 'contain'
+            style={styles.logoImage}/>
           <TextInput
             style={styles.textInput}
             onChangeText={(text) => this.setState({text})}
@@ -123,8 +125,8 @@ export default class LogIn extends Component {
               >
               <View>
                 <Image
-                  source={require('../files/images/long-purple-button.png')}
-                  resizeMode= 'contain' style={styles.image}
+                  source={require('../files/images/long-gray-button.png')}
+                  resizeMode= 'contain'
                   style={styles.buttonImage}
                 >
                   <Text style={styles.buttonLabel}>Submit</Text>
@@ -137,7 +139,7 @@ export default class LogIn extends Component {
               >
               <View>
                 <Image
-                  source={require('../files/images/long-purple-button.png')}
+                  source={require('../files/images/long-gray-button.png')}
                   resizeMode= 'contain' style={styles.image}
                   style={styles.buttonImage}
                 >
@@ -160,14 +162,18 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   textInput: {
-    marginTop: height / 5,
+    marginTop: 0,
     height: height/10,
     width: width/2,
-    backgroundColor: '#D2D2F5',
+    backgroundColor: '#CCCCCC',
     borderRadius: 10,
-    borderColor: '#7F007F',
+    borderColor: '#054C7A',
     borderWidth: 2,
     textAlign: 'center',
+  },
+  logoImage: {
+    marginTop: height / 7,
+    height: height / 5,
   },
   buttons: {
     height: height/15,

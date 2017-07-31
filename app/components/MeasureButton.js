@@ -17,32 +17,23 @@ const cols = 2, rows = 4;
 
 export default class MeasureButton extends Component {
 
-  // Dynamic to create a space for logo on packground
-  getStyles = () => {
-   return {
-     IDFour: (measureTypes.indexOf(this.props.measure) === 3) ? {
-       marginRight: (width - 10) / cols,
-     } : {},
-    };
-  }
-
 
 
   // Component prop types
   static propTypes = {
     // Measure Object
-    measure: PropTypes.object.isRequired,
+    measure: PropTypes.array,
     // Called when user taps on measure button
     onOpen: PropTypes.func.isRequired,
   }
 
   render() {
-    const { measure, imgNum, measure: { measureTitle }, onOpen } = this.props;
+    const { measure, title, onOpen } = this.props;
     return (
-      <TouchableOpacity style={styles.container} onPress={() => onOpen(measure)}>
+      <TouchableOpacity style={styles.container} onPress={() => onOpen(measure, title)}>
         <View style={styles.imageContainer}>
-          <Image source={require('../files/images/blank-purple-button.png')} resizeMode= 'contain' style={styles.image}>
-            <Text style={styles.buttonLabel}>{measureTitle}</Text>
+          <Image source={require('../files/images/blank-gray-button.png')} resizeMode= 'contain' style={styles.image}>
+            <Text style={styles.buttonLabel}>{title}</Text>
           </Image>
         </View>
 

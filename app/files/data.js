@@ -1,3 +1,5 @@
+export const password = '1234'
+
 export const companies = [
   {
     title: 'Commercial Insurance Solutions',

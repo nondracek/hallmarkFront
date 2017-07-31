@@ -25,11 +25,11 @@ const { width, height } = Dimensions.get('window');
 
 @connect(
   state => ({
-    measureTypes: state.measureTypes,
+    Data: state.Data,
     loading: state.loading,
   }),
   dispatch => ({
-    refresh: () => dispatch({type: 'GET_MOVIE_DATA'}),
+    refresh: () => dispatch({type: 'GET_MEASURE_DATA'}),
   }),
 )
 
@@ -49,10 +49,11 @@ export default class Measures extends Component {
 
 
 
-  openMeasure = (measure, key) => {
+  openMeasure = (measure, title, key) => {
     this.setState({
       popupIsOpen: true,
       measure,
+      title
     });
   }
 
@@ -62,30 +63,33 @@ export default class Measures extends Component {
     });
   }
 
+  
   render() {
-    const { measureTypes, loading, refresh } = this.props;
+    const { Data, loading, refresh } = this.props;
+    const currentComp = Data[this.props.navigation.state.params.title]
     return (
       <LinearGradient
-        colors={['#4c669f', '#3b5998', '#192f6a']}
+        colors={['#CCCCCC', '#054C7A', '#192f6a']}
         style={styles.container}
       >
         <View
           style={styles.buttonContent}
         >
-          {measureTypes.map((measure, index) => <MeasureButton
-            measure={measure}
+          {Object.keys(currentComp).map((measure, index) => <MeasureButton
+            measure={currentComp[measure]}
             onOpen={this.openMeasure}
-            imgNum={measureTypes.indexOf(measure)}
+            title={measure}
             key={index}
           />)}
         </View>
         <MeasurePopUp
           onSwipe={this.openMeasure}
           measure={this.state.measure}
+          measureName={this.state.title}
           measureID = {this.state.key}
           isOpen={this.state.popupIsOpen}
           onClose={this.closeMeasure}
-          measureTypes={measureTypes}
+          measureTypes={currentComp}
         />
     </LinearGradient>
     );

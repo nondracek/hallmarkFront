@@ -14,8 +14,6 @@ import LinearGradient from 'react-native-linear-gradient';
 // Get screen Dimensions
 const { width, height } = Dimensions.get('window');
 
-export var companyTitle = "hello"
-
 export default class Companies extends Component {
 
     static navigationOptions = {
@@ -30,7 +28,7 @@ export default class Companies extends Component {
     const { navigate } = this.props.navigation;
     return (
       <LinearGradient
-        colors={['#4c669f', '#3b5998', '#192f6a']}
+        colors={['#CCCCCC', '#054C7A', '#192f6a']}
         style={styles.container}
         >
       {/* <View style={styles.container}> */}
