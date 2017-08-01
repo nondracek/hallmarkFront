@@ -48,7 +48,7 @@ export default class Measures extends Component {
 
 
 
-
+  // Brings up the popup when a measure is touched
   openMeasure = (measure, title, key) => {
     this.setState({
       popupIsOpen: true,
@@ -57,13 +57,14 @@ export default class Measures extends Component {
     });
   }
 
+  // Closes measure when background is touched
   closeMeasure = () => {
     this.setState({
       popupIsOpen: false,
     });
   }
 
-  
+
   render() {
     const { Data, loading, refresh } = this.props;
     const currentComp = Data[this.props.navigation.state.params.title]
@@ -96,6 +97,7 @@ export default class Measures extends Component {
   }
 }
 
+//styles
 const styles = StyleSheet.create({
   container: {
     // paddingTop: .05*(height - 50),         // start below status bar

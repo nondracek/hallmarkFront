@@ -1,5 +1,8 @@
+// Password for the app currently. This could be changed to read an array
+// or from another csv, but for the time being, it is just this one
 export const password = '1234'
 
+// Don't use these at the moment.
 export const companies = [
   {
     title: 'Commercial Insurance Solutions',

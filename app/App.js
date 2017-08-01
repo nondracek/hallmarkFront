@@ -15,10 +15,11 @@ import { apiMiddleware, reducer } from './files/redux';
 // Create Redux store
 const store = createStore(reducer, {}, applyMiddleware(apiMiddleware));
 
-// Fetch movie data
+// Fetch measure data (and user but at the moment no user data is imported)
 store.dispatch({type: 'GET_MEASURE_DATA'});
 store.dispatch({type: 'GET_USER_DATA'});
 
+// Navigator with the three screens
 const HallmarkAppFront = StackNavigator({
   LogIn: { screen: LogIn },
   Companies: { screen: Companies },
@@ -34,7 +35,7 @@ const HallmarkAppFront = StackNavigator({
   }
 );
 
-
+// Wraps the navigator in the redux so all screens have access to redux
 export default class App extends Component {
   render() {
     return (

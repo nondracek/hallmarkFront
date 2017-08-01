@@ -1,3 +1,5 @@
+//***Currently Unused, Background made by Linear Gradient in each screen
+
 import React, {Component} from 'react';
 import {
     Image,

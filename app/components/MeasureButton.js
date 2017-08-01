@@ -12,7 +12,7 @@ import { measureButtons } from '../files/data'
 
 // Get screen dimensions
 const { width, height } = Dimensions.get('window');
-// How many posters we want to have in each row and column
+// How many buttons we want to have in each row and column
 const cols = 2, rows = 4;
 
 export default class MeasureButton extends Component {

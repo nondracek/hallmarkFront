@@ -1,3 +1,5 @@
+//***Currently unused, Buttons made in CompanyButton and MeasureButton***
+
 import React, {Component} from 'react';
 import {
     AppRegistry,

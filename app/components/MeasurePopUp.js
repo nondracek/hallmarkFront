@@ -25,10 +25,8 @@ export default class MeasurePopUp extends Component {
 
   static propTypes = {
 	  isOpen: PropTypes.bool.isRequired,
-    // Movie object that has title, genre, poster, days and times
+    // measure object inherited from csv that has MTD YTD
     measure: PropTypes.array,
-    // Gets called when user books their ticket
-    onBook: PropTypes.func,
     // Gets called when popup closed
     onClose: PropTypes.func,
   }
@@ -40,7 +38,7 @@ export default class MeasurePopUp extends Component {
     opacity: new Animated.Value(0),
     // Popup height that can be changed by pulling it up or down
     height: defaultHeight,
-    // Expanded mode with bigger poster flag
+    // Expanded mode
     expanded: false,
     // Visibility flag
     visible: this.props.isOpen,
@@ -228,38 +226,12 @@ export default class MeasurePopUp extends Component {
 
 
   measureData(measure, measureName) {
-    // if (measureName === 'Policy Counts') {
-    //   return (
-    //     <View style={styles.movieInfo}>
-    //       <Text style={styles.listHeader}>New</Text>
-    //       <Text style={[styles.smalltitle, this.getStyles().title]}>MTD: ${measure[0]}</Text>
-    //       <Text style={[styles.smalltitle, this.getStyles().title]}>YTD: ${measure[1]}</Text>
-    //       <Text style={styles.listHeader}>Renewals</Text>
-    //       <Text style={[styles.smalltitle, this.getStyles().title]}>MTD: ${measure[0]}</Text>
-    //       <Text style={[styles.smalltitle, this.getStyles().title]}>YTD: ${measure[1]}</Text>
-    //     </View>
-    //   )
-    // }
-    // else if (measureName === 'Incurred Loss') {
-    //   return (
-    //     <View style={styles.movieInfo}>
-    //       <Text style={styles.listHeader}>Incurred Loss</Text>
-    //       <Text style={[styles.smalltitle, this.getStyles().title]}>MTD: ${measure[0]}</Text>
-    //       <Text style={[styles.smalltitle, this.getStyles().title]}>YTD: ${measure[1]}</Text>
-    //       <Text style={styles.listHeader}>Average Incurred Severity</Text>
-    //       <Text style={[styles.smalltitle, this.getStyles().title]}>MTD: ${measure[0]}</Text>
-    //       <Text style={[styles.smalltitle, this.getStyles().title]}>YTD: ${measure[1]}</Text>
-    //     </View>
-    //   )
-    // }
-    // else {
       return (
         <View style={styles.simpleInfo}>
           <Text style={[styles.title, this.getStyles().title]}>MTD: ${measure[0]}</Text>
           <Text style={[styles.title, this.getStyles().title]}>YTD: ${measure[1]}</Text>
         </View>
       )
-    // }
   }
 
 
@@ -267,7 +239,6 @@ export default class MeasurePopUp extends Component {
     const {
       measure,
       measureName,
-      onBook
     } = this.props;
     // Render nothing if not visible
     if (!this.state.visible) {

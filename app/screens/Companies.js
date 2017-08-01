@@ -31,26 +31,20 @@ export default class Companies extends Component {
         colors={['#CCCCCC', '#054C7A', '#192f6a']}
         style={styles.container}
         >
-      {/* <View style={styles.container}> */}
-        {/* <ScrollView style={styles.container}
-            contentContainerStyle={styles.scrollContent}
-      		  // Hide all scroll indicators
-            showsHorizontalScrollIndicator={false}
-            showsVerticalScrollIndicator={false}
-          > */}
-            {companies.map((company, index) => <CompanyButton
+
+            {//makes a button for each company
+              companies.map((company, index) => <CompanyButton
               company={company}
               onOpen={this.toMeasures}
               key={index}
               navigation = {navigate}
             />)}
-        {/* </ScrollView> */}
-      {/* </View> */}
+
       </LinearGradient>
     );
   }
 }
-
+ //styles
 const styles = StyleSheet.create({
   container: {
     paddingTop: .04*(height - 50),         // start below status bar

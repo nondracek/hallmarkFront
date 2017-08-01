@@ -1,3 +1,5 @@
+// Currently the HomePage
+
 import React, { Component, PropTypes } from 'react';
 import {
   Dimensions,
@@ -28,6 +30,7 @@ import LinearGradient from 'react-native-linear-gradient';
 // Get screen Dimensions
 const { width, height } = Dimensions.get('window');
 
+// Connect to the redux event handler flow
 @connect(
   state => ({
     userData: state.userData,
@@ -50,6 +53,7 @@ export default class LogIn extends Component {
     header: null,
   }
 
+  // Checks that entered pin matches and if it does, navigates to companies
   pinCheck = (navRoute) => {
     // for (i = 0; i < this.props.userData.length; i++) {
     //   if (this.props.userData[i].PIN === this.state.text) {
@@ -64,6 +68,7 @@ export default class LogIn extends Component {
     alert('incorrect pin')
   }
 
+  //Function to check and handle the finger scan response
   FingerScanAttempt = (callback) => {
       FingerprintScanner
         .isSensorAvailable()
@@ -152,6 +157,7 @@ export default class LogIn extends Component {
   }
 }
 
+//styles
 const styles = StyleSheet.create({
   container: {
     // paddingTop: .04*(height - 50),         // start below status bar
