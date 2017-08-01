@@ -12,6 +12,7 @@ import {
   View,
 } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
+var numeral = require('numeral');
 
 import { defaultStyles } from './style';
 
@@ -228,8 +229,8 @@ export default class MeasurePopUp extends Component {
   measureData(measure, measureName) {
       return (
         <View style={styles.simpleInfo}>
-          <Text style={[styles.title, this.getStyles().title]}>MTD: ${measure[0]}</Text>
-          <Text style={[styles.title, this.getStyles().title]}>YTD: ${measure[1]}</Text>
+          <Text style={[styles.title, this.getStyles().title]}>MTD: ${numeral(measure[0]).format('0,0')}</Text>
+          <Text style={[styles.title, this.getStyles().title]}>YTD: ${numeral(measure[1]).format('0,0')}</Text>
         </View>
       )
   }
