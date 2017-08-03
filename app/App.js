@@ -9,13 +9,12 @@ import { StackNavigator, TabNavigator } from 'react-navigation';
 import LogIn from './screens/LogIn';
 import Measures from './screens/Measures';
 import Companies from './screens/Companies';
-import {styles} from './components/style';
 import { apiMiddleware, reducer } from './files/redux';
 
 // Create Redux store
 const store = createStore(reducer, {}, applyMiddleware(apiMiddleware));
 
-// Fetch measure data (and user but at the moment no user data is imported)
+// // Fetch measure data (and user but at the moment no user data is imported)
 store.dispatch({type: 'GET_MEASURE_DATA'});
 store.dispatch({type: 'GET_USER_DATA'});
 

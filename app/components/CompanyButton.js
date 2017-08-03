@@ -62,8 +62,11 @@ export default class CompanyButton extends Component {
 
 const styles = StyleSheet.create({
   container: {
+    flex: 1,
     marginLeft: 10,
     marginBottom: 10,
+    maxWidth: (width - 10) / (cols * 1.25) - 10,
+    maxHeight: height / 8,
     minHeight: ((height - 40) / rows - 10) * .9,
     minWidth: (width - 10) / (cols * 1.25) - 10,
   },

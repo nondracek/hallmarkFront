@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import {
+  Button,
   Dimensions,
   ScrollView,
   StyleSheet,
@@ -31,7 +32,6 @@ export default class Companies extends Component {
         colors={['#CCCCCC', '#054C7A', '#192f6a']}
         style={styles.container}
         >
-
             {//makes a button for each company
               companies.map((company, index) => <CompanyButton
               company={company}
@@ -52,6 +52,7 @@ const styles = StyleSheet.create({
     flexWrap: 'wrap',       // allow multiple rows
     justifyContent: 'center',
     flex: 1,
+    width: width,
   },
   scrollContent: {
     flexDirection: 'row',   // arrange posters in rows

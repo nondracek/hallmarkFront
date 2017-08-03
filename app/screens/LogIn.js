@@ -122,7 +122,7 @@ export default class LogIn extends Component {
             maxLength= {4}
             placeholder= '4-Digit PIN'
             secureTextEntry= {true}
-            autoFocus= {true}
+            autoFocus= {false}
           />
             <TouchableOpacity
               onPress={() => this.pinCheck(resetAction)}

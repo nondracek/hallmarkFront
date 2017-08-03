@@ -53,6 +53,7 @@ const styles = StyleSheet.create({
     flex: 1,                          // take up all available space
   },
   image: {
+    flexWrap: 'wrap',
     borderRadius: 10,                 // rounded corners
     height: ((height - 40) / rows - 10) * .9,
     width: (width - 10) / (cols * 1.25) - 10,
@@ -65,5 +66,7 @@ const styles = StyleSheet.create({
     fontSize: 23,
     ...defaultStyles.text,
     textAlign: 'center',
+    maxWidth: (width - 10) / (cols * 1.25) - 30,
+    maxHeight: ((height - 40) / rows - 10) * .9,
   },
 });
