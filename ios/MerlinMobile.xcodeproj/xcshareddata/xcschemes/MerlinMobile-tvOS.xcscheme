@@ -29,9 +29,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "2D02E47A1E0B4A5D006451C7"
-               BuildableName = "hallmarkAppFront-tvOS.app"
-               BlueprintName = "hallmarkAppFront-tvOS"
-               ReferencedContainer = "container:hallmarkAppFront.xcodeproj">
+               BuildableName = "MerlinMobile-tvOS.app"
+               BlueprintName = "MerlinMobile-tvOS"
+               ReferencedContainer = "container:MerlinMobile.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
          <BuildActionEntry
@@ -43,9 +43,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "2D02E48F1E0B4A5D006451C7"
-               BuildableName = "hallmarkAppFront-tvOSTests.xctest"
-               BlueprintName = "hallmarkAppFront-tvOSTests"
-               ReferencedContainer = "container:hallmarkAppFront.xcodeproj">
+               BuildableName = "MerlinMobile-tvOSTests.xctest"
+               BlueprintName = "MerlinMobile-tvOSTests"
+               ReferencedContainer = "container:MerlinMobile.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -61,9 +61,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "2D02E48F1E0B4A5D006451C7"
-               BuildableName = "hallmarkAppFront-tvOSTests.xctest"
-               BlueprintName = "hallmarkAppFront-tvOSTests"
-               ReferencedContainer = "container:hallmarkAppFront.xcodeproj">
+               BuildableName = "MerlinMobile-tvOSTests.xctest"
+               BlueprintName = "MerlinMobile-tvOSTests"
+               ReferencedContainer = "container:MerlinMobile.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -71,9 +71,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "2D02E47A1E0B4A5D006451C7"
-            BuildableName = "hallmarkAppFront-tvOS.app"
-            BlueprintName = "hallmarkAppFront-tvOS"
-            ReferencedContainer = "container:hallmarkAppFront.xcodeproj">
+            BuildableName = "MerlinMobile-tvOS.app"
+            BlueprintName = "MerlinMobile-tvOS"
+            ReferencedContainer = "container:MerlinMobile.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -94,9 +94,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "2D02E47A1E0B4A5D006451C7"
-            BuildableName = "hallmarkAppFront-tvOS.app"
-            BlueprintName = "hallmarkAppFront-tvOS"
-            ReferencedContainer = "container:hallmarkAppFront.xcodeproj">
+            BuildableName = "MerlinMobile-tvOS.app"
+            BlueprintName = "MerlinMobile-tvOS"
+            ReferencedContainer = "container:MerlinMobile.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -113,9 +113,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "2D02E47A1E0B4A5D006451C7"
-            BuildableName = "hallmarkAppFront-tvOS.app"
-            BlueprintName = "hallmarkAppFront-tvOS"
-            ReferencedContainer = "container:hallmarkAppFront.xcodeproj">
+            BuildableName = "MerlinMobile-tvOS.app"
+            BlueprintName = "MerlinMobile-tvOS"
+            ReferencedContainer = "container:MerlinMobile.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

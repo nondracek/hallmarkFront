@@ -1,4 +1,4 @@
-package com.hallmarkappfront;
+package com.merlinmobile;
 
 import android.app.Application;
 

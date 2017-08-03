@@ -94,7 +94,7 @@ android {
     buildToolsVersion "25.0.3"
 
     defaultConfig {
-        applicationId "com.hallmarkappfront"
+        applicationId "com.merlinmobile"
         minSdkVersion 16
         targetSdkVersion 25
         versionCode 1

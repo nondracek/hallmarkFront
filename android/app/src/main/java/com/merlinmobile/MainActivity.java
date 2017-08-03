@@ -1,4 +1,4 @@
-package com.hallmarkappfront;
+package com.merlinmobile;
 
 import com.facebook.react.ReactActivity;
 
@@ -10,6 +10,6 @@ public class MainActivity extends ReactActivity {
      */
     @Override
     protected String getMainComponentName() {
-        return "hallmarkAppFront";
+        return "MerlinMobile";
     }
 }
